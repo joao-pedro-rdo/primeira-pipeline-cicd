@@ -1,4 +1,4 @@
-name: Como usar variavel de ambiente e contexto do GitHub Actions
+name: Como usar variavel de ambiente e contexto do GitHub Actions push
 on: 
     push:
         branches: [main]
