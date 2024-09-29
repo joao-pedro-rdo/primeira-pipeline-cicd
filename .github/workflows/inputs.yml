@@ -29,7 +29,7 @@ jobs:
         runs_on: ubuntu-latest
         steps:
             - name: Exibindo o contexto de input completo
-              run: echo ¨${{ roJson{inputs}}¨
+              run: echo ¨${{ toJson(inputs)}}¨
             - name: Exbindo os valores individualmente
               run: |
                 echo ¨Esses sao os valores passados no inputs¨
