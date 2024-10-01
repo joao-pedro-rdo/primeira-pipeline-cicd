@@ -1,7 +1,7 @@
 name: Exmplo de input
 run-name:  Exemplo de workflow para input, executado por ${{ github.actor }}
 on: 
-    workflow_dispatch:
+    workflow_dispatch: # Possibilita disparar o workflow manualmente, como nao temos um evento de push ou pull_request, usamos esse evento
         inputs:
             versao:
                 type: string 
@@ -26,14 +26,14 @@ on:
                     - Produçao
 jobs:
     valores_input:
-        runs_on: ubuntu-latest
+        runs-on: ubuntu-latest
         steps:
             - name: Exibindo o contexto de input completo
-              run: echo ¨${{ toJson(inputs)}}¨
+              run: echo "${{ toJson(inputs) }}"
             - name: Exbindo os valores individualmente
               run: |
-                echo ¨Esses sao os valores passados no inputs¨
-                echo ¨¨A versao  é ${{ inputs.versao}}
-                echo ¨¨O card ${{ inputs.numero_card}}
-                echo ¨¨Deve fazer deploy  ${{ inputs.fazer_deploy}}
-                echo ¨O ambiente é ${{ inputs.ambiente}}
+                echo "Esses sao os valores passados no inputs"
+                echo "A versao  é ${{ inputs.versao }}"
+                echo "O card ${{ inputs.numero_card }}"
+                echo "Deve fazer deploy  ${{ inputs.fazer_deploy }}"
+                echo "O ambiente é ${{ inputs.ambiente }}"
