@@ -9,7 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
         ENV_JOB: "Valor JOB CONTEXT"
-    steps:
+    steps: # Lista de passos que o job deve executar
+    # Cada name é um passo e gera  um bloco de execução  na action
       - name: Contexto github
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
