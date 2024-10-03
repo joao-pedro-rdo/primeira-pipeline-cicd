@@ -43,6 +43,6 @@ jobs:
                 name: ${{ env.NOME_ARTEFATO }}
 
             - name: Listar arquivos
-              run: ls ./arquivos  
+              run: ls   
                 
             
